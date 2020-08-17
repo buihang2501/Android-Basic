@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SignUp ConstrainLayout</string>
+
+    <string name="sign_up">Sign Up</string>
+    <string name="ready_sign_in">Already have an account? Sign in.</string>
 </resources>

@@ -4,15 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textViewName"
+        style="@style/TextViewTheme"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="230dp"
+        android:text="Name"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        style="@style/TextViewTheme"
+        android:layout_marginTop="@dimen/marginTopTextView"
+        android:text="E-mail"
+        app:layout_constraintEnd_toEndOf="@+id/textViewName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+    <TextView
+        android:id="@+id/textViewPassword"
+        style="@style/TextViewTheme"
+        android:layout_marginTop="@dimen/marginTopTextView"
+        android:text="Password"
+        app:layout_constraintEnd_toEndOf="@+id/textViewEmail"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+
+    <TextView
+        android:id="@+id/textViewConfirm"
+        style="@style/TextViewTheme"
+        android:layout_marginTop="@dimen/marginTopTextView"
+        android:text="Confirm"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPassword"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.28" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        style="@style/EditTextTheme"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewName"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toTopOf="@+id/textViewName" />
+
+    <EditText
+        android:id="@+id/editTextConfirm"
+        style="@style/EditTextTheme"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewConfirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/textViewConfirm"
+        app:layout_constraintVertical_bias="0.538" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        style="@style/EditTextTheme"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextConfirm"
+        app:layout_constraintTop_toTopOf="@+id/textViewPassword" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        style="@style/EditTextTheme"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewEmail"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+        app:layout_constraintTop_toTopOf="@+id/textViewEmail" />
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape"
+        android:text="@string/sign_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirm" />
+
+    <TextView
+        android:id="@+id/textViewSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:text="@string/ready_sign_in"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

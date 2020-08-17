@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginTopTextView">40dp</dimen>
+    <dimen name="textViewSize">18dp</dimen>
+    <dimen name="widthEditText">250dp</dimen>
+    <dimen name="heightEditText">45dp</dimen>
+</resources>
