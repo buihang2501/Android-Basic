@@ -11,15 +11,16 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">@dimen/textViewSize</item>
+        <item name="android:textSize">@dimen/dp_18</item>
     </style>
 
     <style name="EditTextTheme">
-        <item name="android:layout_width">@dimen/widthEditText</item>
-        <item name="android:layout_height">@dimen/heightEditText</item>
+        <item name="android:layout_width">@dimen/dp_250</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
         <item name="backgroundTint">@android:color/white</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:ems">10</item>
     </style>
 
 </resources>
+

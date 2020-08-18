@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="marginTopTextView">40dp</dimen>
-    <dimen name="textViewSize">18dp</dimen>
-    <dimen name="widthEditText">250dp</dimen>
-    <dimen name="heightEditText">45dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_250">250dp</dimen>
+    <dimen name="dp_45">45dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_330">330dp</dimen>
 </resources>

@@ -8,40 +8,40 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textViewName"
+        android:id="@+id/textLabelName"
         style="@style/TextViewTheme"
         android:layout_marginStart="16dp"
         android:layout_marginTop="230dp"
-        android:text="Name"
+        android:text="@string/label_name"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewEmail"
+        android:id="@+id/textLabelEmail"
         style="@style/TextViewTheme"
-        android:layout_marginTop="@dimen/marginTopTextView"
-        android:text="E-mail"
-        app:layout_constraintEnd_toEndOf="@+id/textViewName"
-        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+        android:layout_marginTop="@dimen/dp_40"
+        android:text="@string/label_email"
+        app:layout_constraintEnd_toEndOf="@+id/textLabelName"
+        app:layout_constraintTop_toBottomOf="@+id/textLabelName" />
 
     <TextView
-        android:id="@+id/textViewPassword"
+        android:id="@+id/textLabelPassword"
         style="@style/TextViewTheme"
-        android:layout_marginTop="@dimen/marginTopTextView"
-        android:text="Password"
-        app:layout_constraintEnd_toEndOf="@+id/textViewEmail"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+        android:layout_marginTop="@dimen/dp_40"
+        android:text="@string/label_password"
+        app:layout_constraintEnd_toEndOf="@+id/textLabelEmail"
+        app:layout_constraintTop_toBottomOf="@+id/textLabelEmail" />
 
     <TextView
-        android:id="@+id/textViewConfirm"
+        android:id="@+id/textLabelConfirm"
         style="@style/TextViewTheme"
-        android:layout_marginTop="@dimen/marginTopTextView"
-        android:text="Confirm"
+        android:layout_marginTop="@dimen/dp_40"
+        android:text="@string/label_confirm"
         android:textAlignment="viewEnd"
-        app:layout_constraintEnd_toEndOf="@+id/textViewPassword"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/textLabelPassword"
+        app:layout_constraintTop_toBottomOf="@+id/textLabelPassword" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -51,64 +51,65 @@
         app:layout_constraintGuide_percent="0.28" />
 
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/editName"
         style="@style/EditTextTheme"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewName"
-        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
-        app:layout_constraintTop_toTopOf="@+id/textViewName" />
+        app:layout_constraintBottom_toBottomOf="@+id/textLabelName"
+        app:layout_constraintStart_toStartOf="@+id/editEmail"
+        app:layout_constraintTop_toTopOf="@+id/textLabelName" />
 
     <EditText
-        android:id="@+id/editTextConfirm"
+        android:id="@+id/editConfirm"
         style="@style/EditTextTheme"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewConfirm"
+        app:layout_constraintBottom_toBottomOf="@+id/textLabelConfirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.357"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/textViewConfirm"
+        app:layout_constraintTop_toTopOf="@+id/textLabelConfirm"
         app:layout_constraintVertical_bias="0.538" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editPassword"
         style="@style/EditTextTheme"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextConfirm"
-        app:layout_constraintTop_toTopOf="@+id/textViewPassword" />
+        app:layout_constraintBottom_toBottomOf="@+id/textLabelPassword"
+        app:layout_constraintStart_toStartOf="@+id/editConfirm"
+        app:layout_constraintTop_toTopOf="@+id/textLabelPassword" />
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/editEmail"
         style="@style/EditTextTheme"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewEmail"
-        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
-        app:layout_constraintTop_toTopOf="@+id/textViewEmail" />
+        app:layout_constraintBottom_toBottomOf="@+id/textLabelEmail"
+        app:layout_constraintStart_toStartOf="@+id/editPassword"
+        app:layout_constraintTop_toTopOf="@+id/textLabelEmail" />
 
     <Button
         android:id="@+id/buttonSignUp"
-        android:layout_width="330dp"
+        android:layout_width="@dimen/dp_330"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/dp_40"
         android:background="@drawable/shape"
-        android:text="@string/sign_up"
+        android:text="@string/title_sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextConfirm" />
+        app:layout_constraintTop_toBottomOf="@+id/editConfirm" />
 
     <TextView
         android:id="@+id/textViewSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
-        android:textSize="12dp"
+        android:textSize="@dimen/dp_12"
         android:textStyle="bold"
-        android:layout_marginBottom="20dp"
-        android:text="@string/ready_sign_in"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:text="@string/title_ready_sign_in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
