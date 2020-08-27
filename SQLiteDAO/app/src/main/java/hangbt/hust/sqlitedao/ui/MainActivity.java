@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        recyclerStudent = findViewById(R.id.recyclerStudent);
         recyclerStudent.setAdapter(studentApdater);
     }
 

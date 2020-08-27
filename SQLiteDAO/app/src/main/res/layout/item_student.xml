@@ -16,8 +16,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonDelete"
@@ -28,8 +27,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textName"
         app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
         app:layout_constraintTop_toTopOf="@+id/textName"
-        app:layout_constraintVertical_bias="0.482"
-        />
+        app:layout_constraintVertical_bias="0.482" />
 
     <Button
         android:id="@+id/buttonEdit"
