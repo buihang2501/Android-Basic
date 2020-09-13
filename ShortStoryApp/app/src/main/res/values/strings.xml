@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ShortStoryApp</string>
+
+    <string name="title_story">An Occurrence at Owl Creek Bridge</string>
+    <string name="author_story">Ambrose Bierce</string>
+    <string name="description_story">A short story masterpiece: This a suspenseful story about a Civil War soldier, Petyon Farquhar, who has been captured by enemy troops. The story opens in a dangerous predicament, with the soldier about to be hanged, "A man stood upon a railroad bridge in northern Alabama ... A rope closely encircled his neck." Will Farquhar succeed in his effort to make a daring escape?</string>
+    <string name="detail_reading">start reading</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
