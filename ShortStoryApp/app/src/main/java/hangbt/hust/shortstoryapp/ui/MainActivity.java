@@ -1,11 +1,10 @@
 package hangbt.hust.shortstoryapp.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
@@ -62,18 +61,15 @@ public class MainActivity extends AppCompatActivity implements DetailStoryFragme
                 .execute();
     }
 
-    private void openDetail(ShortStory story, int position){
+    private void openDetail(ShortStory story, int position) {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.constrainMain, DetailStoryFragment.newInstance(story, position))
+                .add(R.id.constrainMain, DetailStoryFragment.newInstance(story, position))
                 .addToBackStack(null)
                 .commit();
     }
 
     @Override
-    public void onAddBookmark(ShortStory story) {
-        new BaseAsyncTask<Void, List<ShortStory>>()
-                .setOnDataLoadedListener(listener)
-                .onExecute(aVoid -> storyDao.getAllStory())
-                .execute();
+    public void onAddBookmark(ShortStory story, int position) {
+        storyAdapter.updateItem(story, position);
     }
 }

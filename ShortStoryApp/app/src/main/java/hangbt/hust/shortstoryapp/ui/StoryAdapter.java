@@ -1,6 +1,6 @@
 package hangbt.hust.shortstoryapp.ui;
 
-import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -20,6 +21,7 @@ import hangbt.hust.shortstoryapp.data.model.ShortStory;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHolder> {
 
+    private static final String TAG = "StoryAdapter";
     private List<ShortStory> stories = new ArrayList<>();
     private OnItemClickListener listener;
 
@@ -51,9 +53,10 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         notifyDataSetChanged();
     }
 
-    public void updateItem(ShortStory story, int position){
-        stories.set(position, story);
-        notifyItemChanged(position);
+    public void updateItem(ShortStory story, int position) {
+        stories.remove(position);
+        stories.add(position, story);
+        notifyDataSetChanged();
     }
 
     static class StoryViewHolder extends RecyclerView.ViewHolder {
@@ -81,17 +84,16 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
                     .load(story.getImage())
                     .into(image);
 
-            if (story.getBookmark() == 1) {
-                viewBookmark.setBackgroundResource(R.color.colorBookmark);
-            }
-
+            int colorId = story.getBookmark() == 0 ? R.color.colorBookMarkGreen : R.color.colorBookmark;
+            int color = ContextCompat.getColor(itemView.getContext(),colorId);
+            viewBookmark.setBackgroundColor(color);
             itemView.setOnClickListener(view -> {
                 listener.onClick(story, getAdapterPosition());
             });
         }
     }
 
-    public interface OnItemClickListener{
+    public interface OnItemClickListener {
         void onClick(ShortStory story, int position);
     }
 

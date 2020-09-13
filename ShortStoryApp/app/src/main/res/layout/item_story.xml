@@ -56,7 +56,6 @@
         android:layout_marginTop="@dimen/dp_1"
         android:layout_marginBottom="@dimen/dp_1"
         android:background="@drawable/shape_bookmark"
-        android:backgroundTint="@color/colorBookMarkGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textViewTitle"
         app:layout_constraintHorizontal_bias="0.0"
