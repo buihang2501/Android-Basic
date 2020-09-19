@@ -117,27 +117,27 @@ public class DetailStoryFragment extends Fragment {
             imageViewMark.setBackgroundResource(R.drawable.ic_baseline_bookmark_border_24);
         }
 
-        onClickBookmarkListener.onAddBookmark(story);
-
-        new BaseAsyncTask<ShortStory, Void>()
-                .setOnDataLoadedListener(new BaseAsyncTask.OnDataLoadedListener<Void>() {
-                    @Override
-                    public void onSuccess(Void data) {
-                        Toast.makeText(getContext(), "Success!", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFailure(Exception e) {
-                        Log.e(TAG, "onFailure: ",e );
-                    }
-                })
-                .onExecute(new BaseAsyncTask.OnExecuteListener<ShortStory, Void>() {
-                    @Override
-                    public Void onExecute(ShortStory story) {
-                        return storyDao.updateStory(story);
-                    }
-                })
-                .execute();
+//        onClickBookmarkListener.onAddBookmark(story);
+//
+//        new BaseAsyncTask<ShortStory, Void>()
+//                .setOnDataLoadedListener(new BaseAsyncTask.OnDataLoadedListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void data) {
+//                        Toast.makeText(getContext(), "Success!", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Exception e) {
+//                        Log.e(TAG, "onFailure: ",e );
+//                    }
+//                })
+//                .onExecute(new BaseAsyncTask.OnExecuteListener<ShortStory, Void>() {
+//                    @Override
+//                    public Void onExecute(ShortStory story) {
+//                        return storyDao.updateStory(story);
+//                    }
+//                })
+//                .execute();
     }
 
     public interface OnClickBookmarkListener{
