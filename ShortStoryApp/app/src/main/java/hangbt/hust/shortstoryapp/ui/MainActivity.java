@@ -71,9 +71,6 @@ public class MainActivity extends AppCompatActivity implements DetailStoryFragme
 
     @Override
     public void onAddBookmark(ShortStory story, int position) {
-//        new BaseAsyncTask<Void, List<ShortStory>>()
-//                .setOnDataLoadedListener(listener)
-//                .onExecute(aVoid -> storyDao.getAllStory())
-//                .execute();
+
     }
 }

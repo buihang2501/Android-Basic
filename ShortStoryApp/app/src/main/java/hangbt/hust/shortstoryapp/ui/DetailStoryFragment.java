@@ -29,8 +29,6 @@ public class DetailStoryFragment extends Fragment {
     public static final String BUNDLE_STORY = "BUNDLE_STORY";
     public static final String BUNDLE_POSITION = "BUNDLE_POSITION";
 
-    private static final String TAG = "DetailStoryFragment";
-
     private ImageView image;
     private TextView textViewTitle, textViewAuthor, textViewDescription;
     private ImageView imageViewBack, imageViewMark;
