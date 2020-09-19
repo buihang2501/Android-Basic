@@ -29,6 +29,11 @@ public class DetailStoryFragment extends Fragment {
     public static final String BUNDLE_STORY = "BUNDLE_STORY";
     public static final String BUNDLE_POSITION = "BUNDLE_POSITION";
 
+
+    private int position;
+
+    private static final String TAG = "DetailStoryFragment";
+
     private ImageView image;
     private TextView textViewTitle, textViewAuthor, textViewDescription;
     private ImageView imageViewBack, imageViewMark;
@@ -88,6 +93,7 @@ public class DetailStoryFragment extends Fragment {
 
     public void showDetail() {
         ShortStory story = (ShortStory) getArguments().getSerializable(BUNDLE_STORY);
+        position = getArguments().getInt(BUNDLE_POSITION);
 
         Glide.with(this).load(story.getImage()).into(image);
         textViewTitle.setText(story.getTitle());
@@ -106,39 +112,22 @@ public class DetailStoryFragment extends Fragment {
     }
 
     private void setBookMark(ShortStory story) {
-        ShortStoryDao storyDao = AppDatabase.getInstance(getContext()).storyDao();
-        if (story.getBookmark() == 0) {
-            story.setBookmark(1);
-            imageViewMark.setBackgroundResource(R.drawable.ic_baseline_bookmark_24);
-        } else {
-            story.setBookmark(0);
-            imageViewMark.setBackgroundResource(R.drawable.ic_baseline_bookmark_border_24);
-        }
 
-//        onClickBookmarkListener.onAddBookmark(story);
-//
-//        new BaseAsyncTask<ShortStory, Void>()
-//                .setOnDataLoadedListener(new BaseAsyncTask.OnDataLoadedListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void data) {
-//                        Toast.makeText(getContext(), "Success!", Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Exception e) {
-//                        Log.e(TAG, "onFailure: ",e );
-//                    }
-//                })
-//                .onExecute(new BaseAsyncTask.OnExecuteListener<ShortStory, Void>() {
-//                    @Override
-//                    public Void onExecute(ShortStory story) {
-//                        return storyDao.updateStory(story);
-//                    }
-//                })
-//                .execute();
+        int resId = story.getBookmark() == 0 ? R.drawable.ic_baseline_bookmark_24 : R.drawable.ic_baseline_bookmark_border_24;
+        story.setBookmark(1 - story.getBookmark());
+        imageViewMark.setBackgroundResource(resId);
+//        if (story.getBookmark() == 0) {
+//            story.setBookmark(1);
+//            imageViewMark.setBackgroundResource(R.drawable.ic_baseline_bookmark_24);
+//        } else {
+//            story.setBookmark(0);
+//            imageViewMark.setBackgroundResource(R.drawable.ic_baseline_bookmark_border_24);
+//        }
+
+        onClickBookmarkListener.onAddBookmark(story,position);
     }
 
     public interface OnClickBookmarkListener{
-        void onAddBookmark(ShortStory story, int postion);
+        void onAddBookmark(ShortStory story, int position);
     }
 }
