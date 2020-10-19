@@ -2,14 +2,12 @@ package hangbt.hust.shortstoryapp.ui;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,10 +17,7 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 
 import hangbt.hust.shortstoryapp.R;
-import hangbt.hust.shortstoryapp.data.base.BaseAsyncTask;
 import hangbt.hust.shortstoryapp.data.model.ShortStory;
-import hangbt.hust.shortstoryapp.data.source.AppDatabase;
-import hangbt.hust.shortstoryapp.data.source.ShortStoryDao;
 
 public class DetailStoryFragment extends Fragment {
 
@@ -112,22 +107,14 @@ public class DetailStoryFragment extends Fragment {
     }
 
     private void setBookMark(ShortStory story) {
-
         int resId = story.getBookmark() == 0 ? R.drawable.ic_baseline_bookmark_24 : R.drawable.ic_baseline_bookmark_border_24;
         story.setBookmark(1 - story.getBookmark());
         imageViewMark.setBackgroundResource(resId);
-//        if (story.getBookmark() == 0) {
-//            story.setBookmark(1);
-//            imageViewMark.setBackgroundResource(R.drawable.ic_baseline_bookmark_24);
-//        } else {
-//            story.setBookmark(0);
-//            imageViewMark.setBackgroundResource(R.drawable.ic_baseline_bookmark_border_24);
-//        }
 
-        onClickBookmarkListener.onAddBookmark(story,position);
+        onClickBookmarkListener.onAddBookmark(story, position);
     }
 
-    public interface OnClickBookmarkListener{
+    public interface OnClickBookmarkListener {
         void onAddBookmark(ShortStory story, int position);
     }
 }
